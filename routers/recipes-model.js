@@ -27,6 +27,7 @@ function getInstructions(recipe_id) {
   return db("steps")
     .where("recipe_id", recipe_id)
     .select("step_number","instructions")
+    .orderBy("step_number")
 }
 
 function getRecipesByIngredient(ingredient_id) {
